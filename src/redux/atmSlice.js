@@ -10,9 +10,10 @@ const atmSlice = createSlice({
     toggleShowAtm: (state) => {
       state.showAtm = !state.showAtm;
     },
-    setBalance: (state, action) => {
-      state.balance = action.payload;
+    setBalance: (state) => {
+      state.balance = state.balance;
     },
+    
   },
 });
 
