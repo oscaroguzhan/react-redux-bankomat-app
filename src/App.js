@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from "react-redux";
+import { ThemeProvider } from "styled-components";
+import Atm from "./components/Atm";
+import Header from "./components/Header";
 
 function App() {
+  const theme = {
+    colors: {
+      primary_bg: "#695cfe",
+      secondary_bg: "#fafafa",
+      primary_btn: "tomato",
+      primary_text: "#fff",
+      secondary_text: "#333",
+    },
+  };
+  // get the state from the  redux store
+  const { showAtm } = useSelector((state) => state.atm);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Header />
+      {/* conditionally render the component beroende av state */}
+      {showAtm && <Atm />}
+    </ThemeProvider>
   );
 }
 
