@@ -13,9 +13,19 @@ const atmSlice = createSlice({
     setBalance: (state) => {
       state.balance = state.balance;
     },
-    
+    addOneHundred: (state) => ({ ...state, balance: state.balance + 100 }),
+    addTwoHundred: (state) => ({ ...state, balance: state.balance + 200 }),
+    addFiveHundred: (state) => ({ ...state, balance: state.balance + 500 }),
+    addOneThousand: (state) => ({ ...state, balance: state.balance + 1000 }),
   },
 });
 
-export const { toggleShowAtm, setBalance } = atmSlice.actions;
+export const {
+  toggleShowAtm,
+  setBalance,
+  addOneHundred,
+  addTwoHundred,
+  addFiveHundred,
+  addOneThousand,
+} = atmSlice.actions;
 export default atmSlice.reducer;

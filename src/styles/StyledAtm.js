@@ -18,5 +18,13 @@ const StyledAtm = styled.div`
     color: black;
     transition: 0.5s ease-in;
   }
+  .btn_group {
+    margin: 10px;
+    gap:5px;
+
+    button {
+      border-radius:8px;
+    }
+  }
 `;
 export default StyledAtm;
