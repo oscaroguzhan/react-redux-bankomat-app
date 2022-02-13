@@ -14,16 +14,21 @@ const StyledAtm = styled.div`
     text-align: center;
     margin: 20px auto;
   }
-  h2:hover {
-    color: black;
-    transition: 0.5s ease-in;
+  h2 {
+    margin: 10px auto;
+
+    &:hover {
+      color: black;
+      transition: 0.5s ease-in;
+    }
   }
+
   .btn_group {
     margin: 10px;
-    gap:5px;
+    gap: 5px;
 
     button {
-      border-radius:8px;
+      border-radius: 8px;
     }
   }
 `;
