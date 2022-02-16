@@ -10,36 +10,16 @@ const atmSlice = createSlice({
     toggleShowAtm: (state) => {
       state.showAtm = !state.showAtm;
     },
-    setBalance: (state) => {
-      state.balance = state.balance;
-    },
-    addOneHundred: (state) => ({ ...state, balance: state.balance + 100 }),
-    addTwoHundred: (state) => ({ ...state, balance: state.balance + 200 }),
-    addFiveHundred: (state) => ({ ...state, balance: state.balance + 500 }),
-    addOneThousand: (state) => ({ ...state, balance: state.balance + 1000 }),
-    withdrawOneHundred: (state) => ({ ...state, balance: state.balance - 100 }),
-    withdrawTwoHundred: (state) => ({ ...state, balance: state.balance - 200 }),
-    withdrawFiveHundred: (state) => ({
+    depositValue: (state, action) => ({
       ...state,
-      balance: state.balance - 500,
+      balance: state.balance + action.payload,
     }),
-    withdrawOneThousand: (state) => ({
+    WithdrawnValue: (state, action) => ({
       ...state,
-      balance: state.balance - 1000,
+      balance: state.balance - action.payload,
     }),
   },
 });
 
-export const {
-  toggleShowAtm,
-  setBalance,
-  addOneHundred,
-  addTwoHundred,
-  addFiveHundred,
-  addOneThousand,
-  withdrawOneHundred,
-  withdrawTwoHundred,
-  withdrawFiveHundred,
-  withdrawOneThousand,
-} = atmSlice.actions;
+export const { toggleShowAtm, depositValue, WithdrawnValue } = atmSlice.actions;
 export default atmSlice.reducer;
